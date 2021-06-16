@@ -1,12 +1,31 @@
+import java.util.Scanner;
 public class Laddersnake {
 public static void main(String[] args){
-	int Position=0;
-System.out.println("Welcome to Snake & Ladder Program Problem");
-System.out.println("Your at Starting Position"+Position);
-Dice();
-}
-public static void Dice(){
-	int Dice = (int)Math.floor(Math.random()*10)%6+1;
-	System.out.println("Dice Value is "+Dice);
-}
-}
+	
+	int position = 0;
+	//System.out.println("position is " + position);
+	int dice=(int) (Math.random() * 10) % 6+1;
+		System.out.println("dice value is " + dice);
+	int type=(int) (Math.random() * 10) % 3+1;
+	System.out.println("case number is " + type);
+	 switch(type) {
+	   case 1:
+	   System.out.println( "No Play You are in the same position" );
+	   break;
+	  
+	   case 2:
+	   position = (position + dice);
+	   System.out.println( "your position after ladder is :" + position );
+	   break;
+	   
+	   case 3: 
+	   position = (position - dice);
+	  
+	  if(position<0){
+		  position = 0;
+	  }
+		 System.out.println( "Your Position after snake is" + position );
+	   break;
+	   }
+	    }
+	     }
